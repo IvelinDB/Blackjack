@@ -37,7 +37,7 @@ def compare_scores(u_score, c_score):
     else:
         return "You lose :("
     
-def play_games():
+def play_game():
     user_cards = []
     computer_cards = []
     computer_score = -1
@@ -64,10 +64,15 @@ def play_games():
             else:
                 is_games_over = True
     
-    while compare_scores != 0 and computer_score < 17:
+    while computer_cards != 0 and computer_score < 17:
         computer_cards.append(random_cards())
         computer_score = score_calculation(computer_cards)
 
     print(f"Your final hand: {user_cards}, final score: {user_score}")
     print(f"Computer's final hand: {computer_cards}, final score: {computer_score}")
     print(compare_scores(user_score, computer_score))
+
+
+while input("Do you want to play a game of Blackjack? Type 'y' yes or 'n' for no: ") == "y":
+    print("\n" * 20)
+    play_game()
