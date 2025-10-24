@@ -51,11 +51,11 @@ def play_game():
     
     while not is_games_over:
         user_score = score_calculation(user_cards)
-        computer_cards = score_calculation(computer_cards)
+        computer_score = score_calculation(computer_cards)
         print(f"Your cards: {user_cards}, current score: {user_score}")
         print(f"Computers first card: {computer_cards[0]}")
 
-        if user_score == 0 or compare_scores == 0 or user_score > 21:
+        if user_score == 0 or computer_score == 0 or user_score > 21:
             is_games_over = True
         else:
             another_card = input("Type 'y' to get another card, type 'n' to pass: ")
